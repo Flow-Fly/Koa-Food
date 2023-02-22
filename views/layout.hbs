@@ -8,6 +8,9 @@
   <body>
     {{> navbar}}
 
+      {{#if isLoggedIn}}
+       {{> userModal}}
+       {{/if}}
     <div class="main">
         {{{body}}}
     </div>

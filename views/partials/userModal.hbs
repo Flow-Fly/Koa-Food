@@ -1,41 +1,44 @@
 <div id='user-menu'>
-  <div class='user-logo'>
-    <img id='logo-dark' src='/images/logo-dark.png' alt='logo' />
-  </div>
-  <div id='content-user'>
-    <div class='userNav'>
-      <h3 class='welcome'>Welcome {{user.name}}!</h3>
-      <ul id="main-list">
-        <li><a href="/">Main page</a></li>
-        <li><a href='/user/{{user._id}}'>Profile</a></li>
-        <li><a href='/auth/logout'>Logout</a></li>
-        {{#if isAdmin}}
-          <li><a href='/admin/restaurants-create'>Create a Restaurant</a></li>
-          <li><a href='/admin/restaurants-manage'>Manage Restaurants</a></li>
-          <li><a href='/admin/users-manage'>Manage Users</a></li>
-        {{/if}}
-        <li><label for="addUser">
-          Search a friend! 
-        </label>
-        <div>
-        <input type="email" id="addUser" placeholder="Input you friend e-mail">
-        </div>
-        <div><button id="searchUser" type="submit">Search</button></div>
-        <div><p id='userAddInfos'></p></div>
-        </li>
-      </ul>
-    </div>
-    <div id="favorites">
-      
-      
-    </div>
+	<div class='user-logo'>
+		<img id='logo-dark' src='/images/logo-dark.png' alt='logo' />
+	</div>
+	<div id='content-user'>
+		<div class='userNav'>
+			<h3 class='welcome'>Welcome {{user.name}}!</h3>
+			<ul id='main-list'>
+				<li><a href='/'>Main page</a></li>
+				<li><a href='/user/{{user._id}}'>Profile</a></li>
+				<li><a href='/auth/logout'>Logout</a></li>
+				{{#if isAdmin}}
+					<li><a href='/admin/restaurants-create'>Create a Restaurant</a></li>
+					<li><a href='/admin/restaurants-manage'>Manage Restaurants</a></li>
+					<li><a href='/admin/users-manage'>Manage Users</a></li>
+				{{/if}}
+				<li><label for='addUser'>
+						Search a friend!
+					</label>
+					<div>
+						<input
+							type='email'
+							id='addUser'
+							placeholder='Input you friend e-mail'
+						/>
+					</div>
+					<div><button id='searchUser' type='submit'>Search</button></div>
+					<div><p id='userAddInfos'></p></div>
+				</li>
+			</ul>
+		</div>
+		<div id='favorites'>
 
-    <div class="following">
-      <h3 class="following-title">Following:</h3>
-      <ul id="following-list">
-      
-      </ul>
-    </div>
+		</div>
 
-  </div>
+		<div class='following'>
+			<h3 class='following-title'>Following:</h3>
+			<ul id='following-list'>
+
+			</ul>
+		</div>
+
+	</div>
 </div>

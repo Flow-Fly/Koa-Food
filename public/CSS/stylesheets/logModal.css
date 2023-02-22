@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   display: none;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   animation: fade-in 600ms;
   backdrop-filter: 0;
@@ -12,11 +12,14 @@
 }
 
 #logModal > .container {
+  position: fixed;
+  left: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
+  translate: -50% 0;
 }
 
 .modalActive {

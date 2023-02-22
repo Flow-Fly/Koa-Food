@@ -1,6 +1,5 @@
 #user-menu {
   position: absolute;
-  top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -19,6 +18,7 @@
 #user-menu.active + #user.active svg {
   display: block;
   fill: var(--color-dark-green);
+  
 }
 
 #user-menu.active + #user.active {
@@ -32,6 +32,10 @@
 #user-menu.active {
   transform: translate(0, 0);
   z-index: 25;
+}
+
+#user-menu.active + .main {
+  display: none;
 }
 
 .user-logo {
