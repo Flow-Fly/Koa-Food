@@ -14,6 +14,7 @@ const MongoStore = require("connect-mongo")
 const passport = require("passport")
 const mongoose = require("mongoose")
 //const cookieSession = require("cookie-session");
+console.log(process.env.MONGO_URI)
 const connection = mongoose.createConnection(process.env.MONGO_URI)
 const app = express()
 const User = require("./models/User")
