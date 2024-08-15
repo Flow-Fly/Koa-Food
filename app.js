@@ -1,5 +1,5 @@
 require("dotenv").config()
-require("./config/mongodb") // database initial setup
+// require("./config/mongodb") // database initial setup
 require("./helpers/utils") // utils for hbs templates
 // require("./bin/seed");
 const createError = require("http-errors")
@@ -12,7 +12,9 @@ const flash = require("connect-flash")
 const session = require("express-session")
 const MongoStore = require("connect-mongo")
 const passport = require("passport")
+const mongoose = require("mongoose")
 //const cookieSession = require("cookie-session");
+const connection = mongoose.createConnection(process.env.MONGO_URI)
 const app = express()
 const User = require("./models/User")
 // view engine setup
@@ -36,7 +38,7 @@ app.use(
 		saveUninitialized: false,
 		//cookie: {maxAge: 600000,},
 		store: MongoStore.create({
-			client: process.env.MONGO_URI,
+			client: connection.getClient(),
 		}),
 	})
 )
